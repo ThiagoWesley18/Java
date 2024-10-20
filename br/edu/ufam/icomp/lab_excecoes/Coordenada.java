@@ -1,7 +1,8 @@
 package br.edu.ufam.icomp.lab_excecoes;
 
 public class Coordenada {
-    private int posX, posY, digito;
+    private int posX, posY;
+    private int digito;
 
     public Coordenada(int posX, int posY, int digito)throws CoordenadaNegativaException, CoordenadaForaDosLimitesException, DigitoInvalidoException{
 
@@ -26,6 +27,10 @@ public class Coordenada {
     }
     public int getPosY(){
         return posY;
+    }
+
+    public int getDigito(){
+        return digito;
     }
 
     public double distancia(Coordenada coordenada){

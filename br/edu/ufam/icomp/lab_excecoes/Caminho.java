@@ -29,8 +29,8 @@ public class Caminho {
     }
 
     public void reset(){
-        for (Coordenada coordenada : caminho) {
-            coordenada = null;
+        for (int i = 0; i < caminho.length; i++) {
+            caminho[i] = null;
         }
         tamanho = 0;
     }
