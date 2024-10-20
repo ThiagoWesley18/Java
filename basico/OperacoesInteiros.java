@@ -1,85 +1,55 @@
-package basico;
+package basico; // NOSONAR
 import java.util.Scanner;
 
-public class OperacoesInteiros {
+public class OperacoesInteiros { // NOSONAR
     public static void main(String[] args) throws Exception {
-        Scanner scan = new Scanner(System.in);
-        int[] vet = new int[100];
-        int valor;
-        int cont = 0;
-        int par = 0;
-        int impar = 0;
-        int soma = 0;
-        int soma1 = 0;
-        double media = 0.0;
-        int maior = 0;
-        int menor = 0;
+        try (Scanner scan = new Scanner(System.in)) {
+            int[] vet = new int[100];
+            int valor;
+            int cont = 0;
+            int par = 0;
+            int impar = 0; // NOSONAR
+            int soma = 0;
+            double media = 0.0;
+            int maior = Integer.MIN_VALUE; // NOSONAR
+            int menor = Integer.MAX_VALUE; // NOSONAR
 
-        while(true){
-            valor = scan.nextInt();
-            if(valor == -1){
+            while (true) {
+                valor = scan.nextInt();
+                if (valor == -1) {
+                    break;
+                }
                 vet[cont] = valor;
                 cont++;
-                soma1++;
-                break;
-            }else{
-                while(true){
-                    if(valor == -1){
-                        vet[cont] = valor;
-                        cont++;
-                        soma1++;
-                        break;
-                    }else{
-                        vet[cont] = valor;
-                        cont++;
-                    }
-                    valor = scan.nextInt();
-                }
-            }  
-        }
-        
-        
-        int i = 0;
-        cont = 0;
-        while(true){
-            if(vet[i] != -1){
-                maior = vet[i];
-                menor = vet[i];
-                while(true){
-                    if(vet[i] == -1){
-                        media = (double)soma / (double)(cont);
-                        i++;
-                        break;
-                    }else{
-                        cont++;
-                        soma += vet[i];
-                        if(vet[i]%2 == 0){
-                            par++;
-                        }else{impar++;}
-                        if(vet[i] > maior){maior = vet[i];}
-                        if(vet[i] < menor){menor = vet[i];}
-                        i++;
-                    }
-                }
-                System.out.println(cont);
-                System.out.println(par);
-                System.out.println(impar);
-                System.out.println(soma);
-                System.out.printf("%.2f\n",media);
-                System.out.println(maior);
-                System.out.println(menor);
-                cont = 0;
-                par = 0;
-                impar = 0;
-                soma = 0;
-                media = 0.0;
-                maior = 0;
-                menor = 0;
-            }else{
-                break;
             }
+
+            for (int i = 0; i < cont; i++) {
+                valor = vet[i];
+                soma += valor;
+                if (valor % 2 == 0) {
+                    par++;
+                } else {
+                    impar++; // NOSONAR
+                }
+                if (valor > maior) {
+                    maior = valor; // NOSONAR
+                }
+                if (valor < menor) {
+                    menor = valor; // NOSONAR
+                }
+            }
+
+            if (cont > 0) {
+                media = (double) soma / cont;
+            }
+
+            System.out.println("Quantidade de números: " + cont);
+            System.out.println("Quantidade de pares: " + par);
+            System.out.println("Quantidade de ímpares: " + impar); // NOSONAR
+            System.out.println("Soma dos valores: " + soma);
+            System.out.printf("Média dos valores: %.2f\n", media);
+            System.out.println("Maior valor: " + maior); // NOSONAR
+            System.out.println("Menor valor: " + menor); // NOSONAR
         }
-
-
     }
 }

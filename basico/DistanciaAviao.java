@@ -7,7 +7,7 @@ public class DistanciaAviao {
      * @param args
      * @throws Exception
      */
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         int cidade1 = 0;
         int cidade2 = 0;
         int coordenada1 = 0,coordenada2 = 0;
@@ -41,6 +41,7 @@ public class DistanciaAviao {
         }
 
         System.out.println(soma);
+        scan.close();
 
     }
 }

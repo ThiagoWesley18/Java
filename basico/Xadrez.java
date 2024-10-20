@@ -9,23 +9,22 @@ public class Xadrez {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        Scanner scan = new Scanner(System.in);
-        int qtd = scan.nextInt();
-        int total = qtd;
-        int qtdEspaços = 0;
+        try (Scanner scan = new Scanner(System.in)) {
+            int qtd = scan.nextInt();
+            int qtdEspaços = 0;
 
-        for(int j = 0; j < qtd; j++){
-            int i;
-            for(i = 0; i < qtd; i++){
-                if(qtdEspaços % 2 == 0){
-                    System.out.print("* ");
-                }else{
-                    System.out.print(" *");
+            for (int j = 0; j < qtd; j++) {
+                int i;
+                for (i = 0; i < qtd; i++) {
+                    if (qtdEspaços % 2 == 0) {
+                        System.out.print("* ");
+                    } else {
+                        System.out.print(" *");
+                    }
                 }
+                qtdEspaços++;
+                System.out.print("\n");
             }
-            qtdEspaços++;
-            System.out.print("\n");
         }
-    
     }
 }

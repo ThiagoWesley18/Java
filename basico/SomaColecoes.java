@@ -23,6 +23,7 @@ public class SomaColecoes {
             }else{
                 flag = -1;
             }
+            scan.close();
         }
     }
 }

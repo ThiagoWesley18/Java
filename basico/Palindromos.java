@@ -25,5 +25,6 @@ public class Palindromos {
             fim--;
         }
         System.out.printf(linhaMaiusc +" "+ flag);
+        scan.close();
     }
 }

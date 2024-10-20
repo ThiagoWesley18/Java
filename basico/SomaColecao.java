@@ -11,6 +11,7 @@ public class SomaColecao {
             n = scan.nextInt();
         }
         System.out.println(soma);
+        scan.close();
     }
 
 }

@@ -7,7 +7,7 @@ public class AsciiArt {
      * @param args
      * @throws Exception
      */
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int qtd = scan.nextInt();
         int total = qtd;
@@ -30,7 +30,7 @@ public class AsciiArt {
             qtd--;
             qtdEspaços = (total - qtd) * 2;
             System.out.print("\n");
+            scan.close();
         }
-    
     }
 }

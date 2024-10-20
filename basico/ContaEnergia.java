@@ -7,7 +7,7 @@ public class ContaEnergia {
      * @param args
      * @throws Exception
      */
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
         int consumo = scan.nextInt();
         char tipo = scan.next().charAt(0);
@@ -39,5 +39,6 @@ public class ContaEnergia {
 
         }
         System.out.printf("%.2f",valor);
+        scan.close();
     }
 }

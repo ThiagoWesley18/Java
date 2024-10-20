@@ -12,5 +12,6 @@ public class IdadeUfam {
         int ano = scan.nextInt();
         int idade = ano - 1909; 
         System.out.println("A UFAM tem " + idade + " anos de fundacao");
+        scan.close();
     }
 }

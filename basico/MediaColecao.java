@@ -15,5 +15,6 @@ public class MediaColecao {
         }
         media = (double)soma/(double)(cont);
         System.out.printf("%.2f\n",media);
+        scan.close();
     }
 }
